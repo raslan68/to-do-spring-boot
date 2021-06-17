@@ -8,7 +8,5 @@ import com.ramiaslan.todo.entity.Todo;
 
 @Repository
 public interface TodoRepository extends JpaRepository<Todo, Long>{
-	
-	
 
 }

@@ -1,6 +1,6 @@
 package com.ramiaslan.todo.controller.response;
 
-public class GenericResponse {
+public final class GenericResponse {
 	
 	private Integer code;
 	private String message;
@@ -13,12 +13,15 @@ public class GenericResponse {
 	public Integer getCode() {
 		return code;
 	}
+	
 	public void setCode(Integer code) {
 		this.code = code;
 	}
+	
 	public String getMessage() {
 		return message;
 	}
+	
 	public void setMessage(String message) {
 		this.message = message;
 	}
