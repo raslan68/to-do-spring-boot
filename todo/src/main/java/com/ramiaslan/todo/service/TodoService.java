@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.ramiaslan.todo.controller.request.TodoCreateRequest;
@@ -90,6 +91,18 @@ public class TodoService {
 				.map(this::convert)
 				.collect(Collectors.toList());
 	}
+	
+	/**
+	 * Pagination
+	 * @param pageable 
+	 * @return List of Todo Response
+	 */
+	public List<TodoResponse> slice(Pageable pageable) {
+		
+		return todoRepository.findAll(pageable).stream()
+				.map(this::convert)
+				.collect(Collectors.toList());
+	}
 
 	/**
 	 * Find By Id
@@ -117,5 +130,7 @@ public class TodoService {
 		
 		return todoResponse;	
 	}
+
+	
 
 }
